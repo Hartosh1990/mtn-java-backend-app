@@ -1,0 +1,3 @@
+SET VCAP_APPLICATION={}
+SET VCAP_SERVICES={"user-provided": [{"binding_guid": "7847c3fc-aa54-4bab-9624-b42716417958","binding_name": null, "credentials": {"desc": "Provides credential for our HANA user manually created via cockpit","host": "localhost","password": "123!@#Nextgen", "pooling": true,"port": "30015","reconnect": true,"schemaname": "NEXTGEN","uri": "jdbc:sap://localhost:30015/?user=nextgen&password=123!@#Nextgen", "user": "nextgen"},"instance_guid": "49a29bff-9d4e-4a37-8527-ca7dfa2c8cc2","instance_name": "hanaschemadetail","label": "user-provided", "name": "hanaschemadetail", "syslog_drain_url": "", "tags": [], "volume_mounts": []}]}
+

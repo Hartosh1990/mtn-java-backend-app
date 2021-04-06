@@ -1,8 +1,8 @@
 ---
 applications:
 
-- name: intwomtn
-  host: intwomtn
+- name: intwomtnbudh
+  host: intwomtnbudh
   memory: 1024M
   timeout: 300
   random-route: true
@@ -18,5 +18,6 @@ applications:
     JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jdk.SAPMachineJDK']"
   services:
    - authentication
+   - hanaschemadetail
 #  - my-destination
 #  - my-connectivity
