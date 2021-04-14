@@ -1,8 +1,8 @@
 ---
 applications:
 
-- name: intwomtnbudh
-  host: intwomtnbudh
+- name: intwomtndev
+  host: intwomtndev
   memory: 1024M
   timeout: 300
   random-route: true
@@ -21,3 +21,39 @@ applications:
    - hanaschemadetail
 #  - my-destination
 #  - my-connectivity
+- name: intwomtn
+  host: intwomtn
+  memory: 1024M
+  timeout: 300
+  random-route: true
+  path: application/target/mtn-java-backend-app-application.war
+  buildpacks:
+    - sap_java_buildpack
+  env:
+    TARGET_RUNTIME: tomcat
+    SET_LOGGING_LEVEL: '{ROOT: INFO, com.sap.cloud.sdk: INFO,com.sap.xs.security: DEBUG, com.sap.cloud.security: DEBUG}'
+    JBP_CONFIG_SAPJVM_MEMORY_SIZES: 'metaspace:128m..'
+    ENABLE_SECURITY_JAVA_API_V2: true
+    IAS_XSUAA_XCHANGE_ENABLED: true
+    JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jdk.SAPMachineJDK']"
+  services:
+   - authentication
+   - hanaschemadetail
+- name: intwomtnbudh
+  host: intwomtnbudh
+  memory: 1024M
+  timeout: 300
+  random-route: true
+  path: application/target/mtn-java-backend-app-application.war
+  buildpacks:
+    - sap_java_buildpack
+  env:
+    TARGET_RUNTIME: tomcat
+    SET_LOGGING_LEVEL: '{ROOT: INFO, com.sap.cloud.sdk: INFO,com.sap.xs.security: DEBUG, com.sap.cloud.security: DEBUG}'
+    JBP_CONFIG_SAPJVM_MEMORY_SIZES: 'metaspace:128m..'
+    ENABLE_SECURITY_JAVA_API_V2: true
+    IAS_XSUAA_XCHANGE_ENABLED: true
+    JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jdk.SAPMachineJDK']"
+  services:
+   - authentication
+   - hanaschemadetail
